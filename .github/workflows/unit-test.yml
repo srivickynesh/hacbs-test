@@ -29,5 +29,5 @@ jobs:
         uses: instrumenta/conftest-action@master
         with:
           files: ./image_metadata.json
-          policy: policies/image/policy/deprecated-labels.rego          
+          policy: policies/image/policy/deprecated-image.rego
           output: json
