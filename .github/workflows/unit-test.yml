@@ -24,10 +24,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Run Unit Test
         run: |
-          skopeo inspect docker://quay.io/cvpops/test-index:v4.10 > image_metadata.json
+          json_var = skopeo inspect docker://quay.io/cvpops/test-index:v4.10 > image_metadata.json
       - name: Conftest Dir
         uses: instrumenta/conftest-action@master
         with:
-          files: ${{ github.workspace }}/image_metadata.json
+          files: ./image_metadata.json
           policy: policies/image/policy/deprecated-labels.rego          
           output: json
