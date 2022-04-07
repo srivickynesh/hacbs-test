@@ -24,7 +24,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Run Unit Test
         run: |
-          json_var = skopeo inspect docker://quay.io/cvpops/test-index:v4.10 > image_metadata.json
+          skopeo inspect docker://quay.io/cvpops/test-index:v4.10 > image_metadata.json
       - name: Conftest Dir
         uses: instrumenta/conftest-action@master
         with:
