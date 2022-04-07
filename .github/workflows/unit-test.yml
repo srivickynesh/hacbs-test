@@ -25,9 +25,4 @@ jobs:
       - name: Run Unit Test
         run: |
           skopeo inspect docker://quay.io/cvpops/test-index:v4.10 > image_metadata.json
-      - name: Conftest Dir
-        uses: instrumenta/conftest-action@master
-        with:
-          files: ./image_metadata.json
-          policy: ${{ github.workspace }}/policies/image/policy/deprecated-image.rego
-          output: json
+          conftest test --policy ${{ github.workspace }}/policies/image/policy/deprecated-labels.rego img.json --output=json
