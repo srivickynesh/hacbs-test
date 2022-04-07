@@ -22,9 +22,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      - name: Get images Json
+      - uses: artis3n/setup-conftest@v0
+        with:
+          conftest_version: 0.30.0
+      - name: Run Unit Test
         run: |
           skopeo inspect docker://quay.io/cvpops/test-index:v4.10 > image_metadata.json
           conftest test --policy policies/image/policy/deprecated-labels.rego img.json --output=json
