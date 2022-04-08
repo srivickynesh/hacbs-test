@@ -19,6 +19,6 @@ echo "Using image : "$IMAGE
 skopeo inspect docker://${IMAGE} > ${tmpfile}
 
 @test "policies/image/deprecated-images" {
-  cmd="conftest test --policy image/policy/ ${tmpfile} --output=json"
+  cmd="conftest test --policy policies/image/policy/deprecated-image.rego ${tmpfile} --output=json"
   run ${cmd}
 }
