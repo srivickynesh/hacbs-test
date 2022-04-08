@@ -1,0 +1,76 @@
+{
+  "_id": "5c359854d70cc534b3a3784e",
+  "_links": {
+    "certification_project": {
+      "href": "/v1/repositories/registry/registry.access.redhat.com/repository/ubi8/ubi/projects/certification"
+    },
+    "images": {
+      "href": "/v1/repositories/registry/registry.access.redhat.com/repository/ubi8/ubi/images"
+    },
+    "operator_bundles": {
+      "href": "/v1/repositories/registry/registry.access.redhat.com/repository/ubi8/ubi/operators/bundles"
+    },
+    "product_listings": {
+      "href": "/v1/repositories/registry/registry.access.redhat.com/repository/ubi8/ubi/product-listings"
+    },
+    "vendor": {
+      "href": "/v1/vendors/label/redhat"
+    }
+  },
+  "application_categories": [
+    "Operating System"
+  ],
+  "architectures": [
+    "Base Image"
+  ],
+  "auto_rebuild_tags": [
+    "latest"
+  ],
+  "build_categories": [
+    "Base Image"
+  ],
+  "can_auto_release_cve_rebuild": false,
+  "content_stream_tags": [
+    "latest"
+  ],
+  "creation_date": "2019-01-09T06:44:36.544000+00:00",
+  "description": "Provides the latest release of the Red Hat Universal Base Image 8",
+  "display_data": {
+    "long_description": "<p>The Universal Base Image is designed and engineered to be the base layer for all of your containerized applications, middleware and utilities. This base image is freely redistributable, but Red Hat only supports Red Hat technologies through subscriptions for Red Hat products. This image is maintained by Red Hat and updated regularly.</p>\n",
+    "long_description_markdown": "The Universal Base Image is designed and engineered to be the base layer for all of your containerized applications, middleware and utilities. This base image is freely redistributable, but Red Hat only supports Red Hat technologies through subscriptions for Red Hat products. This image is maintained by Red Hat and updated regularly.",
+    "name": "Red Hat Universal Base Image 8",
+    "openshift_tags": "base, ubi, ubi8, universal base image",
+    "short_description": "Provides the latest release of the Red Hat Universal Base Image 8."
+  },
+  "documentation_links": [
+    {
+      "title": "Understanding the UBI standard images",
+      "type": "Documentation",
+      "url": "https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index#con_understanding-the-ubi-standard-images_assembly_types-of-container-images"
+    }
+  ],
+  "includes_multiple_content_streams": false,
+  "last_update_date": "2022-04-01T03:10:57.936000+00:00",
+  "namespace": "ubi8",
+  "non_production_only": false,
+  "object_type": "containerRepository",
+  "privileged_images_allowed": false,
+  "product_id": "5c180b28bed8bd75a2c29a63",
+  "product_listings": [
+    "5ec53f50ef29fd35586d9a56"
+  ],
+  "protected_for_pull": false,
+  "protected_for_search": false,
+  "published": true,
+  "registry": "registry.access.redhat.com",
+  "registry_target": "pulp",
+  "release_categories": [
+    "Generally Available"
+  ],
+  "repository": "ubi8/ubi",
+  "requires_terms": false,
+  "source_container_image_enabled": true,
+  "total_size_bytes": 11226322714,
+  "total_uncompressed_size_bytes": 34392464233,
+  "vendor_label": "redhat"
+}
