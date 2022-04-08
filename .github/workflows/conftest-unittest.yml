@@ -1,6 +1,6 @@
 name: Run conftest-unittests.sh
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   conftest:
@@ -12,5 +12,5 @@ jobs:
       - name: Conftest
         uses: redhat-cop/github-actions/confbatstest@master
         with:
-          tests: test/conftest-unittests.sh
+          tests: tests/conftest-unittests.sh
           policies: '[]' # An empty array is provided as the policies are already cloned via source.
