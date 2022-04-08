@@ -11,7 +11,9 @@ else
 fi
 
 # run "podman run --rm quay.io/skopeo/stable inspect docker://${IMAGE}" >> ${tmpfile}
-run "docker inspect ${IMAGE}" >> ${tmpfile}
+#run "docker inspect ${IMAGE}" >> ${tmpfile}
+
+
 
 cat "$tmpfile"
 
@@ -22,7 +24,7 @@ echo "$FILE is empty."
 fi ;
 
 @test "policies/image/deprecated-images" {
-  run "conftest test --policy policies/image/policy/deprecated-image.rego ${tmpfile} --output=json"
+  run "conftest test --policy policies/image/policy/deprecated-image.rego image_metadata.json --output=json"
   [ "$status" -eq 0 ]
 }
 rm "$tmpfile"
