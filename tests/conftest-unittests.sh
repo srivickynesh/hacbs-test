@@ -10,9 +10,9 @@ else
   IMAGE=$1
 fi
 
-run "podman run --rm quay.io/skopeo/stable inspect docker://${IMAGE}" > ${tmpfile}
+run "podman run --rm quay.io/skopeo/stable inspect docker://${IMAGE}" >> ${tmpfile}
 
-echo "cat $tmpfile"
+cat "$tmpfile"
 
 if [[ -s $tmpfile ]] ; then
 echo "$FILE has json image data."
