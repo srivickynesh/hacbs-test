@@ -9,7 +9,7 @@ else
 fi
 if [ -z "$2" ]
 then
-  jsonfile="../../image_metadata.json"
+  jsonfile="image_metadata.json"
 else
   jsonfile=$2
   echo "Filename: $jsonfile"
