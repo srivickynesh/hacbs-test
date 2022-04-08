@@ -17,11 +17,11 @@ fi
 
 
 # run "podman run --rm quay.io/skopeo/stable inspect docker://${IMAGE}" >> ${tmpfile}
-#run "docker inspect ${IMAGE}" >> ${tmpfile}
+# run "docker inspect ${IMAGE}" >> ${tmpfile}
 
 
 
-cat "$tmpfile"
+cat "$jsonfile"
 
 if [[ -s $jsonfile ]] ; then
 echo "$FILE has json image data."
