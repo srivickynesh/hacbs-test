@@ -12,8 +12,15 @@ fi
 
 run "podman run --rm quay.io/skopeo/stable inspect docker://${IMAGE} > ${tmpfile}"
 
-echo "$tmpfile"
+echo "cat $tmpfile"
+
+if [[ -s $tmpfile ]] ; then
+echo "$FILE has json image data."
+else
+echo "$FILE is empty."
+fi ;
 
 @test "policies/image/deprecated-images" {
   run "conftest test --policy policies/image/policy/deprecated-image.rego ${tmpfile} --output=json"
 }
+rm "$tmpfile"
