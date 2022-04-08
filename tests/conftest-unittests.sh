@@ -33,4 +33,3 @@ fi ;
   run "conftest test --policy policies/image/policy/deprecated-image.rego ${jsonfile} --output=json"
   [ "$status" -eq 0 ]
 }
-rm "$tmpfile"
