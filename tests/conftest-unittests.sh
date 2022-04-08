@@ -10,8 +10,6 @@ else
   IMAGE=$1
 fi
 
-echo "Using image : "$IMAGE 
-
 skopeo inspect docker://${IMAGE} > ${tmpfile}
 
 @test "policies/image/deprecated-images" {
