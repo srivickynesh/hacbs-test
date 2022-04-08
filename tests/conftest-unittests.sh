@@ -10,7 +10,8 @@ else
   IMAGE=$1
 fi
 
-run "podman run --rm quay.io/skopeo/stable inspect docker://${IMAGE}" >> ${tmpfile}
+# run "podman run --rm quay.io/skopeo/stable inspect docker://${IMAGE}" >> ${tmpfile}
+run "docker inspect ${IMAGE}" >> ${tmpfile}
 
 cat "$tmpfile"
 
