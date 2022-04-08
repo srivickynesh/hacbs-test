@@ -5,7 +5,7 @@ tmpfile=$(mktemp)
 
 if [ -z "$1" ]
 then
-  IMAGE=$("quay.io/cvpops/test-index:v4.10")
+  IMAGE=("quay.io/cvpops/test-index:v4.10")
 else
   IMAGE=$1
 fi
@@ -15,4 +15,5 @@ skopeo inspect docker://${IMAGE} > ${tmpfile}
 @test "policies/image/deprecated-images" {
   cmd="conftest test --policy policies/image/policy/deprecated-image.rego ${tmpfile} --output=json"
   run ${cmd}
+  [ "$status" -eq 0 ]
 }
