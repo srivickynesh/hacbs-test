@@ -16,14 +16,11 @@ jobs:
       - name: Check if dockerimage build is working
         run: docker build -f ./Dockerfile .
 
-  node-docker:
-    runs-on: ubuntu-latest
-    container:
-      image: "./Dockerfile"
-    steps:
-         - name: Log the node version
-           run: |
-             skopeo inspect docker://quay.io/cvpops/test-index:v4.10
+      - name: Build docker images
+        run: docker build -t local < .Dockerfile
+      - name: Run tests
+        run: docker run -it -v $PWD:/srv -w/srv local skopeo inspect docker://quay.io/cvpops/test-index:v4.10
+             
   conftest:
     runs-on: ubuntu-latest
     steps:
