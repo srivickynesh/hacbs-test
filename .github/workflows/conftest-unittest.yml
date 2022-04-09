@@ -1,12 +1,25 @@
 name: Run conftest-unittests.sh
 
-on: [pull_request]
+on:
+  pull_request:
+    branches: [ main ]
 
 jobs:
+  docker:
+    name: Check docker build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Docker file code in the root directory
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Check if dockerimage build is working
+        run: docker build -f ./Dockerfile .
+
   node-docker:
     runs-on: ubuntu-latest
     container:
-      image: "Dockerfile"
+      image: "./Dockerfile"
     steps:
          - name: Log the node version
            run: |
