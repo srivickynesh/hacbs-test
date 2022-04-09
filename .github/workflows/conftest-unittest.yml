@@ -3,6 +3,14 @@ name: Run conftest-unittests.sh
 on: [pull_request]
 
 jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: node:quay.io/cvpops/test-index:v4.10
+    steps:
+         - name: Log the node version
+           run: |
+             skopeo inspect docker://quay.io/cvpops/test-index:v4.10
   conftest:
     runs-on: ubuntu-latest
     steps:
