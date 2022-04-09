@@ -6,7 +6,7 @@ jobs:
   node-docker:
     runs-on: ubuntu-latest
     container:
-      image: node:quay.io/cvpops/test-index:v4.10
+      image: quay.io/cvpops/test-index:v4.10
     steps:
          - name: Log the node version
            run: |
